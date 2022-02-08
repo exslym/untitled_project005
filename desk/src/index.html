@@ -3,28 +3,86 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 		<link
-			rel="stylesheet"
 			href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap"
+			rel="stylesheet"
 		/>
-		<title>project005 (css animations & hover effects)</title>
+		<title>project004 (animated blob | css & svg)</title>
 	</head>
 
 	<body>
 		<section>
-			<div class="loader">
-				<span style="--i: 1"></span>
-				<span style="--i: 2"></span>
-				<span style="--i: 3"></span>
-				<span style="--i: 4"></span>
-				<span style="--i: 5"></span>
-				<span style="--i: 6"></span>
-				<span style="--i: 7"></span>
-				<span style="--i: 8"></span>
-				<span style="--i: 9"></span>
-				<span style="--i: 10"></span>
+			<div class="blob">
+				<svg
+					viewBox="0 0 500 500"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					width="100%"
+					id="blobSvg"
+				>
+					<defs>
+						<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+							<stop offset="0%" style="stop-color: rgb(0, 254, 34)"></stop>
+							<stop offset="100%" style="stop-color: rgb(0, 155, 134)"></stop>
+						</linearGradient>
+					</defs>
+					<path fill="url(#gradient)">
+						<animate
+							attributeName="d"
+							begin="0ms"
+							dur="15000ms"
+							repeatCount="indefinite"
+							values="M427,317Q384,384,317,421.5Q250,459,168,436.5Q86,414,78.5,332Q71,250,106,195.5Q141,141,195.5,78Q250,15,304,78.5Q358,142,414,196Q470,250,427,317Z;
+							M437.5,336Q422,422,336,437.5Q250,453,179,422.5Q108,392,75.5,321Q43,250,80,183.5Q117,117,183.5,85.5Q250,54,316.5,85.5Q383,117,418,183.5Q453,250,437.5,336Z;
+							M431.5,308.5Q367,367,308.5,408Q250,449,184.5,415Q119,381,106.5,315.5Q94,250,91,169Q88,88,169,92Q250,96,324,99Q398,102,447,176Q496,250,431.5,308.5Z;
+							M405,316Q382,382,316,411.5Q250,441,184.5,411Q119,381,108.5,315.5Q98,250,112,188Q126,126,188,97.5Q250,69,303,106.5Q356,144,392,197Q428,250,405,316Z;
+							M458,337.5Q425,425,337.5,451Q250,477,183,430.5Q116,384,92,317Q68,250,74.5,165.5Q81,81,165.5,89Q250,97,304.5,119Q359,141,425,195.5Q491,250,458,337.5Z;
+							M421,318.5Q387,387,318.5,404.5Q250,422,186.5,399.5Q123,377,109.5,313.5Q96,250,119.5,196.5Q143,143,196.5,112.5Q250,82,320.5,95.5Q391,109,423,179.5Q455,250,421,318.5Z;
+							M400.5,317.5Q385,385,317.5,400.5Q250,416,172,411Q94,406,84.5,328Q75,250,84.5,172Q94,94,172,51Q250,8,307,72Q364,136,390,193Q416,250,400.5,317.5Z;
+							M427.5,325.5Q401,401,325.5,426.5Q250,452,192,409Q134,366,70.5,308Q7,250,61.5,183Q116,116,183,86Q250,56,337.5,65.5Q425,75,439.5,162.5Q454,250,427.5,325.5Z;
+							M427,317Q384,384,317,421.5Q250,459,168,436.5Q86,414,78.5,332Q71,250,106,195.5Q141,141,195.5,78Q250,15,304,78.5Q358,142,414,196Q470,250,427,317Z;
+							"
+						></animate>
+						<!-- first & last values are same - for smooth loop -->
+					</path>
+				</svg>
+			</div>
+			<!-- for glow effect -->
+			<div class="blob">
+				<svg
+					viewBox="0 0 500 500"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					width="100%"
+					id="blobSvg"
+				>
+					<defs>
+						<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+							<stop offset="0%" style="stop-color: rgb(0, 254, 34)"></stop>
+							<stop offset="100%" style="stop-color: rgb(0, 155, 134)"></stop>
+						</linearGradient>
+					</defs>
+					<path fill="url(#gradient)">
+						<animate
+							attributeName="d"
+							dur="15000ms"
+							repeatCount="indefinite"
+							values="M427,317Q384,384,317,421.5Q250,459,168,436.5Q86,414,78.5,332Q71,250,106,195.5Q141,141,195.5,78Q250,15,304,78.5Q358,142,414,196Q470,250,427,317Z;
+							M437.5,336Q422,422,336,437.5Q250,453,179,422.5Q108,392,75.5,321Q43,250,80,183.5Q117,117,183.5,85.5Q250,54,316.5,85.5Q383,117,418,183.5Q453,250,437.5,336Z;
+							M431.5,308.5Q367,367,308.5,408Q250,449,184.5,415Q119,381,106.5,315.5Q94,250,91,169Q88,88,169,92Q250,96,324,99Q398,102,447,176Q496,250,431.5,308.5Z;
+							M405,316Q382,382,316,411.5Q250,441,184.5,411Q119,381,108.5,315.5Q98,250,112,188Q126,126,188,97.5Q250,69,303,106.5Q356,144,392,197Q428,250,405,316Z;
+							M458,337.5Q425,425,337.5,451Q250,477,183,430.5Q116,384,92,317Q68,250,74.5,165.5Q81,81,165.5,89Q250,97,304.5,119Q359,141,425,195.5Q491,250,458,337.5Z;
+							M421,318.5Q387,387,318.5,404.5Q250,422,186.5,399.5Q123,377,109.5,313.5Q96,250,119.5,196.5Q143,143,196.5,112.5Q250,82,320.5,95.5Q391,109,423,179.5Q455,250,421,318.5Z;
+							M400.5,317.5Q385,385,317.5,400.5Q250,416,172,411Q94,406,84.5,328Q75,250,84.5,172Q94,94,172,51Q250,8,307,72Q364,136,390,193Q416,250,400.5,317.5Z;
+							M427.5,325.5Q401,401,325.5,426.5Q250,452,192,409Q134,366,70.5,308Q7,250,61.5,183Q116,116,183,86Q250,56,337.5,65.5Q425,75,439.5,162.5Q454,250,427.5,325.5Z;
+							M427,317Q384,384,317,421.5Q250,459,168,436.5Q86,414,78.5,332Q71,250,106,195.5Q141,141,195.5,78Q250,15,304,78.5Q358,142,414,196Q470,250,427,317Z;
+							"
+						></animate>
+						<!-- first & last values are same - for smooth loop -->
+					</path>
+				</svg>
 			</div>
 		</section>
 	</body>
